@@ -4,11 +4,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--To Do Item List-->
+        <!--List-->
         <scene sceneID="S58-9t-q3l">
             <objects>
-                <tableViewController id="hMw-qY-tCD" sceneMemberID="viewController">
+                <tableViewController title="List" id="hMw-qY-tCD" customClass="ToDoListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SuB-a4-vHz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -24,10 +25,10 @@
                             <outlet property="delegate" destination="hMw-qY-tCD" id="yC2-xT-NAU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="To Do Item List" id="Eef-Ha-nej">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="asi-4c-5Xc">
+                    <navigationItem key="navigationItem" title="To-Do List" id="Eef-Ha-nej">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="asi-4c-5Xc">
                             <connections>
-                                <segue destination="vXZ-lx-hvc" kind="presentation" id="gER-TE-KEw"/>
+                                <segue destination="Zeo-mV-DCq" kind="presentation" id="FyC-vQ-HXX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -36,10 +37,10 @@
             </objects>
             <point key="canvasLocation" x="402.75" y="179.25"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Item-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Add Item" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -49,10 +50,23 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add To-Do Item" id="Hjr-mU-edv">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Bkf-ys-UJg">
+                            <connections>
+                                <segue destination="K8i-zY-99v" kind="unwind" identifier="unwindSegueCancel" unwindAction="unwindToToDoList:" id="Cfk-rR-dEd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="9Eu-JN-L2a">
+                            <connections>
+                                <segue destination="K8i-zY-99v" kind="unwind" identifier="unwindSegueAdd" unwindAction="unwindToToDoList:" id="Qbi-5l-8Xb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <exit id="K8i-zY-99v" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1177.5" y="179.25"/>
+            <point key="canvasLocation" x="1936.5" y="179.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xgv-zu-nFz">
@@ -71,6 +85,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEZ-bb-Gi2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-356.25" y="179.25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="S1y-PU-X8u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zeo-mV-DCq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p3i-LE-7QT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="MpQ-9l-EjH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vV1-Gi-hfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1177.5" y="179.25"/>
         </scene>
     </scenes>
 </document>
