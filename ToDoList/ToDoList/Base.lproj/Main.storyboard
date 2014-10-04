@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bbm-HY-SVq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--List-->
@@ -48,7 +49,25 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g29-at-jfO">
+                                <rect key="frame" x="16" y="285" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="g29-at-jfO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="0BX-Jo-lwG"/>
+                            <constraint firstItem="g29-at-jfO" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="1kj-ID-4c8"/>
+                            <constraint firstAttribute="centerY" secondItem="g29-at-jfO" secondAttribute="centerY" id="Pln-59-fXM"/>
+                            <constraint firstItem="g29-at-jfO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="221" id="pdm-1Z-HpU"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="pdm-1Z-HpU"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Add To-Do Item" id="Hjr-mU-edv">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="Bkf-ys-UJg">
@@ -62,11 +81,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="theNewItemTextField" destination="g29-at-jfO" id="37D-oY-aWo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <exit id="K8i-zY-99v" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1936.5" y="179.25"/>
+            <point key="canvasLocation" x="1936" y="179"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xgv-zu-nFz">
